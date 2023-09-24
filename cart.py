@@ -3,18 +3,18 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 def get_product(product_id):
-    response = requests.get(f'http://127.0.0.1:5000/products/{product_id}')
+    response = requests.get(f'https://product-service-96lf.onrender.com/products/{product_id}')
     data = response.json()
     return data 
 
 def add_product(product_id, quantity):
     product = {"quantity": quantity}
-    response = requests.post(f'http://127.0.0.1:5000/products/add/{product_id}', json=product)
+    response = requests.post(f'https://product-service-96lf.onrender.com/products/add/{product_id}', json=product)
     data = response.json()
     return data
 def remove_product(product_id, quantity):
     product = {"quantity": quantity}
-    response = requests.post(f'http://127.0.0.1:5000/products/remove/{product_id}', json=product)
+    response = requests.post(f'https://product-service-96lf.onrender.com/products/remove/{product_id}', json=product)
     data = response.json()
     return data
 
